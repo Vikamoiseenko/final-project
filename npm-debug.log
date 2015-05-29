@@ -1,0 +1,26 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'init' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 silly package data undefined
+5 info init written successfully
+6 verbose stack Error: Invalid name: "final project"
+6 verbose stack     at ensureValidName (/usr/local/lib/node_modules/npm/node_modules/normalize-package-data/lib/fixer.js:322:15)
+6 verbose stack     at Object.module.exports.fixNameField (/usr/local/lib/node_modules/npm/node_modules/normalize-package-data/lib/fixer.js:211:5)
+6 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js:30:38
+6 verbose stack     at Array.forEach (native)
+6 verbose stack     at normalize (/usr/local/lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js:29:15)
+6 verbose stack     at final (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:368:33)
+6 verbose stack     at then (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:127:33)
+6 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:241:59
+6 verbose stack     at f (/usr/local/lib/node_modules/npm/node_modules/once/once.js:17:25)
+6 verbose stack     at Glob.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/read-package-json/node_modules/glob/glob.js:132:7)
+7 verbose cwd /Users/victoriamoiseenko/Desktop/itc298/final project
+8 error Darwin 14.3.0
+9 error argv "node" "/usr/local/bin/npm" "init"
+10 error node v0.12.2
+11 error npm  v2.7.4
+12 error Invalid name: "final project"
+13 error If you need help, you may report this error at:
+13 error     <https://github.com/npm/npm/issues>
+14 verbose exit [ 1, true ]
