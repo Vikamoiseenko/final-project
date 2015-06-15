@@ -14,7 +14,7 @@ db.init(function(err) {
   }
   console.log("Database ready, starting server.......");
   server.start(function() {
-    console.log("Good to go!");
+    console.log("Ready!");
   });
 });
 
@@ -28,42 +28,4 @@ server.views({
   layout: "default",
 });
 
-server.route({
-  method: "POST",
-  path: "/{id?}",
-  handler: function(req, reply) {
-    var payload = req.payload;
-    console.log(payload);
-    db.addShopping(payload);
-    }
-  });
-
-
-server.route({
-  method: "GET",
-  path: "/",
-  handler: function(req, reply) {
-    reply.view("view", {
-      shoppingList: null
-    });
-    }
-});
-
-server.route({
-  method: "GET",
-  path: "/add",
-  handler: function(req, reply) {
-    reply.view("add");
-    }
-});
-
-
-server.route({
-  method: "GET",
-  path: "/assets/{param*}",
-  handler: {
-    directory: {
-      path: "public"
-    }
-  }
-});
+server.route(require("./routes"));
