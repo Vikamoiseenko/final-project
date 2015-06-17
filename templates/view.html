@@ -1,6 +1,13 @@
-<h2>Shopping List</h2>
+<h2><a href="./edit">Edit Your Library</a></h2>
+<h2>{{title}}</h2>
 <ul>
-  {{#shoppingList}}
-  <li>{{shoppName}}
-  {{/shoppingList}}
+  {{#library}}
+  <li>
+  Title: {{title}}
+  <br>
+  Author:{{author}}
+  <br>
+  Published on: {{published}}
+</li>
+{{/library}}
 </ul>

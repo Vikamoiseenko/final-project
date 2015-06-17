@@ -1,16 +1,16 @@
-var Shopp = require("../models/view");
+var Post = require("../models/post");
 //var async = require("async");
 
 module.exports = function(req, reply) {
   var id = req.params.id;
-  var model = new Shopp({
+  var model = new Post({
     id: id
   });
 
   if (id == "new") {
-    return reply.view("add", {
-      product: "New Product",
-      view: model.toJSON()
+    return reply.view("post", {
+      title: "",
+      post: model.toJSON()
     });
   }
   model.set("id", id);
@@ -22,8 +22,9 @@ module.exports = function(req, reply) {
       data = model.toJSON();
     }
     reply.view("view", {
-      product: data.name,
+      title: data.name,
       view: data
+      //view: data
     });
-  })  ;
+  }) ;
 };

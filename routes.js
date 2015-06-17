@@ -1,5 +1,4 @@
 var db = require("./db");
-var view = require("./models/view");
 
 
 module.exports = [
@@ -9,19 +8,43 @@ module.exports = [
       handler: {
         directory: {
           path: "public"
-          }
-        }
+}
+        },
+        method:"GET",
+        path:"/login",
+        handler: require("./handlers/getLogin")
       }, {
-          method: "POST",
-          path: "/getShopp/{id?}",
-          handler: require("./handlers/setShopp")
-          },{
-          method: "GET",
-          path: "/",
-          handler: require("./handlers/getShopping")
-        }, {
-          method: "GET",
-          path: "/getShopp/{id?}",
-          handler: require("./handlers/getShopp")
+        method:"POST",
+        path:"/login",
+        handler: require("./handlers/postLogin")
+      }, {
+        method:"GET",
+        path:"/",
+        handler: require("./handlers/homePage")
+      },{
+        method:"GET",
+        path:"/list/new",
+        handler: require("./handlers/addPost")
+      }, {
+        method:"GET",
+        path:"/list/{slug}",
+        handler: require("./handlers/viewPost")
+      }, {
+        method:"GET",
+        path:"/list/{slug}/edit",
+        handler: require("./handlers/editPost")
+      }, {
+        method:"GET",
+        path:"/list",
+        handler: require("./handlers/homePage")
+      }, {
+        method:"POST",
+        path:"/list/{slug}",
+        handler: require("./handlers/sevePost")
+      }, {
+        method:"GET",
+        path:"/list/",
+        handler: require("./handlers/getPost")
       }
+
 ];
