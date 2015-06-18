@@ -12,7 +12,7 @@ module.exports = backbone.Model.extend({
     title: "",
     author: "",
     published: "",
-    id: "new"
+    slug: "new"
   },
   load: function(done){
     var self = this;
@@ -27,19 +27,44 @@ module.exports = backbone.Model.extend({
   },
   save: function(done) {
     var self = this;
-    var id = this.get("id");
-    var q = id == "new" ? SAVE : UPDATE;
-    var query = db.connection.prepare(q);
+    if (this.get("slug") == "new") {
+    var query = db.connection.prepare(SAVE);
     var data = this.toJSON();
     var slug = this.get("title").toLowerCase();
     console.log(data);
 
-    db.connection.run(q, {
+    query.run({
       $title: data.title,
       $author: data.author,
-      $id: id == "new" ? undefined : data.id,
       $published: moment().format("dddd MMMM Do, YYYY"),
+      $slug: slug
+    }, function (err) {
+        if(!err) {
+          done(null, "Book sucessfully created")
+        }
+    }, done);
+    console.log(done);
+} else{
+    var query = db.connection.prepare(UPDATE);
+    var data = this.toJSON();
+
+    query.run({
+      $title: data.title,
+      $author: data.author,
       $slug: slug
     }, done);
   }
+},
+  delete: function (done) {
+    var data = this.toJSON();
+    var query = db.connection.prepare(DELETE);
+    query.run({
+      $title: data.title,
+      $author: data.author,
+      $slug: slug
+    }, function(err, response){
+      done(err, response);
+    });
+  }
+  
 });

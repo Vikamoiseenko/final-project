@@ -45,6 +45,10 @@ module.exports = [
         method:"GET",
         path:"/list/",
         handler: require("./handlers/getPost")
+      }, {
+        method:"GET",
+        path:"/list/{slug}/delete",
+        handler: require("./handlers/deletePost")
       }
 
 ];

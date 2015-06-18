@@ -12,7 +12,3 @@ module.exports = function(req, reply) {
     reply.redirect("/list");
   });
 };
-  //console.log(payload);
-  //db.addShopping(payload);
-//  return reply.redirect("/");
-//  };

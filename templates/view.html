@@ -1,4 +1,17 @@
-<h2><a href="./edit">Edit Your Library</a></h2>
+<h2><a href="/list/{{library.slug}}/edit">Edit Your Library</a></h2>
+<h2>{{title}}</h2>
+<ul>
+  {{#library}}
+  <li>
+  Title: {{title}}
+  <br>
+  Author:{{author}}
+  <br>
+  Published on: {{published}}
+</li>
+{{/library}}
+</ul>
+<h2><a href="/list/{{library.slug}}/delete">Do you want to delete?</a></h2>
 <h2>{{title}}</h2>
 <ul>
   {{#library}}
