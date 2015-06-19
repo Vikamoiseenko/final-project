@@ -1,19 +1,18 @@
 <h1>Library</h1>
-<p>
-  Here is a list of all Library books. <a href="/list/new">Click here</a> to create a new book.
-</p>
+
 
 <ul>
   {{#library}}
     <li>
-        <a href="/list/{{slug}}">Title: {{title}}</a>
-        <a href="/list/{{slug}}">Author: {{author}}</a>
-        <a href="/list/{{slug}}">Publish on {{published}}</a>
+      <h3><a href="/list/{{slug}}">Title: {{title}}</a></h3>
+        <h3><a href="/list/{{slug}}">Author: {{author}}</a></h3>
+          <h3><a href="/list/{{slug}}">Publish on {{published}}</a></h3>
     </li>
   {{/library}}
 </ul>
 
 
+<h3> Log In <a href="/login">Click here</a>.</h3>
 <p>
   Logout. <a href="/logout">Click here</a>.
 </p>

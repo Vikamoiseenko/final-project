@@ -5,7 +5,7 @@ var moment = require('moment');
 var LOAD = "select * from library WHERE slug = $slug;";
 var SAVE = "INSERT INTO library (title, slug, author, published) VALUES ($title, $slug, $author, $published);";
 var UPDATE = "UPDATE library SET title = $title, author = $author WHERE slug = $slug;";
-var DELETE = "DELETE * FROM library WHERE slug = $slug;";
+var DELETE = "DELETE FROM library WHERE title = $title";
 
 module.exports = backbone.Model.extend({
   defaults:{
@@ -56,15 +56,12 @@ module.exports = backbone.Model.extend({
   }
 },
   delete: function (done) {
-    var data = this.toJSON();
+    var self = this;
     var query = db.connection.prepare(DELETE);
+    var data = this.toJSON();
     query.run({
-      $title: data.title,
-      $author: data.author,
-      $slug: slug
-    }, function(err, response){
-      done(err, response);
-    });
+      $title: data.title
+    }, done);
   }
-  
+
 });

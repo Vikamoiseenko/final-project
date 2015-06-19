@@ -1,6 +1,9 @@
-<h1>Enter Your Library Book<h1>
-<form action="/list/{{library.id}}" method="POST" class="shopping">
+<h1>Enter Your Library Book</h1>
+<div>
+  <section class="form">
 
+<form action="/list/{{library.id}}" method="POST" class="book">
+{{error}}
 <label>Book Title:</label>
 <input name="title" value="{{library.title}}">
 <br>
@@ -13,3 +16,5 @@
 
 <input type="submit">
 </form>
+</section>
+</div>

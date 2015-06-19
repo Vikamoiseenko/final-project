@@ -1,7 +1,89 @@
+@charset "utf-8";
+
 body {
-  background: pink;
+  font-family: Helvetica, serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 10px auto;
+}
+p {
+  margin: auto;
+  font-size: 12px;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #46719e;
+
 }
 h1 {
-  font-size: 16px;
+  font-size: 18px;
   font-style: italic;
+}
+h3{
+  font-size: 14px;
+  font-style: italic;
+  font-weight: bold;
+}
+#wrapper{
+  max-width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#main-nav {
+  width: 100%;
+  float: right;
+float: right;
+}
+#main-nav ul{
+  display: block;
+}
+#main-nav ul li.current{
+	color:#0FEF18;
+}
+#main-nav ul li:hover{
+	color: #46719e;
+}
+#main-nav ul li:hover a{
+	color: #46719e;
+}
+.form
+{
+  width: 920px;
+  padding-left: 10px auto;
+}
+.book {
+  padding: 25px 20px;
+  clear: both;
+  overflow: hidden;
+}
+.book label {
+	display:block;
+	font-size: 1.125em;
+	margin-bottom: 4px;
+}
+.book input {
+border: 2px solid #a8a8a8;
+display:block;
+font-size: 1em;
+margin-bottom: 10px;
+padding: 5px;
+}
+.book textarea {
+	background: none repeat scroll 0 0 #fff;
+    border: 2px solid #a8a8a8;
+    font-size: 1em;
+    margin-bottom: 10px;
+    overflow: auto;
+    padding: 5px;
+    width: 90%;
+}
+footer {
+  margin-top: 10px;
+  margin: 0 auto;
+  clear: both;
+  max-width: 960px;
+  text-align: center;
 }

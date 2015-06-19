@@ -7,7 +7,7 @@ module.exports = function(req, reply) {
     id: id
   });
 
-  if (id == "new") {
+  if (slug == "new") {
     return reply.view("post", {
       title: "",
       post: model.toJSON()

@@ -3,13 +3,6 @@ var db = require("./db");
 
 module.exports = [
   {
-      method: "GET",
-      path: "/assets/{param*}",
-      handler: {
-        directory: {
-          path: "public"
-}
-        },
         method:"GET",
         path:"/login",
         handler: require("./handlers/getLogin")
@@ -49,6 +42,17 @@ module.exports = [
         method:"GET",
         path:"/list/{slug}/delete",
         handler: require("./handlers/deletePost")
-      }
+      }, {
+        method:"GET",
+        path:"/logout",
+        handler: require("./handlers/logout")
+      }, {
+        method: "GET",
+        path: "/assets/{param*}",
+        handler: {
+          directory: {
+            path: "public"
+          }
+  }
 
-];
+}];

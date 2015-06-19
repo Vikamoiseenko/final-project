@@ -1,13 +1,14 @@
 <h2><a href="/list/{{library.slug}}/edit">Edit Your Library</a></h2>
 <h2>{{title}}</h2>
+<section class="form">
 <ul>
   {{#library}}
   <li>
-  Title: {{title}}
+  <h3>Title:</h3> {{title}}
   <br>
-  Author:{{author}}
+  <h3>Author:</h3>{{author}}
   <br>
-  Published on: {{published}}
+  <h3>Published on:</h3> {{published}}
 </li>
 {{/library}}
 </ul>
@@ -16,11 +17,12 @@
 <ul>
   {{#library}}
   <li>
-  Title: {{title}}
+    <h3>Title:</h3> {{title}}
   <br>
-  Author:{{author}}
+  <h3>Author:</h3>{{author}}
   <br>
-  Published on: {{published}}
+  <h3>Published on:</h3> {{published}}
 </li>
 {{/library}}
 </ul>
+</section>
